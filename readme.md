@@ -1,6 +1,6 @@
 ### Clock Project
 
-Making a Project to make a clock using Django with React.js and Redux.
+Making a Project to make a clock using Django and bootstrap.
 
 ---
 ### New Features to add
