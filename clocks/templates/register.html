@@ -1,0 +1,17 @@
+{% extends "clocks/base.html" %}
+
+{% block body_block %}
+  <div class="jumbotron">
+    {% if registered %}
+      <h1>Hello</h1>
+    {% else %}
+      <h1>Register by Filling out the form:</h1>
+        <form method="POST">
+          {% csrf_token %}
+          {{ user_from.as_p }}
+          <input type="submit" value="Register">
+        </form>
+    {% endif %}
+  </div>
+
+{% endblock %}

@@ -11,19 +11,21 @@
       <div class="container">
         <ul class='nav navbar-nav'>
           <li><a class='navbar-brand mb-0 h1' href="{% url 'index' %}">Home</a></li>
-          <li><a class='navbar-link' href="{% url %}">About</a></li>
-          <li><a class='navbar-link' href="{% url %}">Digital Clock</a></li>
-          <li><a class='navbar-link' href="{% url %}">Analog Clock</a></li>
+          <li><a class='navbar-link' href="{% url 'accounts:about' %}">About</a></li>
+          <li><a class='navbar-link' href="{% url 'accounts:digital' %}">Digital Clock</a></li>
+          <li><a class='navbar-link' href="{% url 'acounts:analog' %}">Analog Clock</a></li>
         </ul>
       </div>
       <div class="container">
         <ul class='nav navbar-nav'>
-          <li><a class='navbar-link' href="{% url %}">Register</a></li>
+          <li><a class='navbar-link' href="{% url 'accounts:register' %}">Register</a></li>
 
         </ul>
       </div>
-
     </nav>
-
+    <div class="container">
+      {% block body_block %}
+      {% endblock %}
+    </div>
   </body>
 </html>
