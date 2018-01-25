@@ -3,3 +3,10 @@
   justify-content: center;
   align-content: center;
 }
+.button-container{
+  display: flex;
+  justify-content: center;
+}
+.buttons{
+  margin-right: 5px;
+}
