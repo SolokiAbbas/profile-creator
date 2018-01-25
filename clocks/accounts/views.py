@@ -5,6 +5,9 @@ from accounts.forms import UserForm
 def index(request):
     return render(request, 'index.html')
 
+def about(request):
+    return render(request, 'about.html')
+
 def register(request):
     registered = False
     if request.method == "POST":
