@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class UserProfile(models.Model):
-    user = OneToOneField(User)
+    user = models.OneToOneField(User)
     bio = models.TextField()
 
     def __str__(self):

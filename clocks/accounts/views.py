@@ -3,7 +3,7 @@ from accounts.forms import UserForm
 
 # Create your views here.
 def index(request):
-    return render(request, 'accounts/index.html')
+    return render(request, 'index.html')
 
 def register(request):
     registered = False
