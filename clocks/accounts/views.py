@@ -17,6 +17,6 @@ def register(request):
         else:
             print(user_form.errors)
     else:
-        user_form = UserForm()
+        user_form = UserForm
     return render(request, 'accounts/register.html',
                         {'user_form':user_form, 'registered': registered})

@@ -4,7 +4,7 @@ from accounts.models import UserProfile
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput())
-    bio = forms.CharField(widget=forms.Textarea(attrs={'cols':80, 'rows': 20}))
+    bio = forms.CharField(widget=forms.Textarea(attrs={'cols':50, 'rows': 5}))
 
     class Meta:
         model = User
