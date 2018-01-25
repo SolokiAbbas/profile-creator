@@ -2,8 +2,8 @@
 
 {% block body_block %}
   <div class="jumbotron button-container">
-    <a class="btn btn-primary buttons" href="#" role="button">Digital Clock</a>
-    <a class="btn btn-primary" href="#" role="button">Analog Clock</a>
+    <a class="btn btn-primary buttons" href="{% url 'digital' %}" role="button">Digital Clock</a>
+    <a class="btn btn-primary" href="{% url 'analog' %}" role="button">Analog Clock</a>
   </div>
 
 {% endblock %}

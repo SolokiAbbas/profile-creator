@@ -11,6 +11,9 @@ def about(request):
 def digital(request):
     return render(request, 'digital.html')
 
+def analog(request):
+    return render(request, 'analog.html')
+
 def register(request):
     registered = False
     if request.method == "POST":

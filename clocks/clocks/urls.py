@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^accounts', include('accounts.urls')),
     url(r'^about', views.about, name='about'),
     url(r'^digital', views.digital, name='digital'),
+    url(r'^analog', views.analog, name='analog'),
 
 ]
