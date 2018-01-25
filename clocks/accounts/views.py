@@ -8,6 +8,9 @@ def index(request):
 def about(request):
     return render(request, 'about.html')
 
+def digital(request):
+    return render(request, 'digital.html')
+
 def register(request):
     registered = False
     if request.method == "POST":

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'digital_clock.css' %}">
+<script type="text/javascript">
+    var myTimer = setInterval(setClock,1000);
+    function setClock(){
+   document.getElementById("clock").innerHTML=new Date().toLocaleTimeString();}
+</script>
+  <div class="jumbotron clock-container">
+    <p id="clock">HH:MM:SS</p>
+  </div>
+{% endblock %}
