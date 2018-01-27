@@ -1,10 +1,13 @@
 from django.shortcuts import render
 from accounts.forms import UserForm
+from . import models
+from django.contrib.auth.models import User
 
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.contrib.auth.decorators import login_required
+from django.views.generic import View, DetailView
 
 # Create your views here.
 def index(request):
@@ -41,6 +44,14 @@ def register(request):
     return render(request, 'accounts/register.html',
                         {'user_form':user_form, 'registered': registered})
 
+@login_required
+def current_user(request):
+    current = request.user
+    # profile = User.objects.get(username=current.username)
+    bio = models.UserProfile.objects.all().filter(user=current)
+    print(models.UserProfile.objects.all().filter(user=current))
+    return render(request,'accounts/profile_detail.html',{"username":current.username,
+                                                            "email":current.email,})
 
 def user_login(request):
 
@@ -57,3 +68,8 @@ def user_login(request):
             return render(request, 'accounts/user_login.html', {"errors":"Invalid", "username":username})
     else:
         return render(request, 'accounts/user_login.html', {})
+
+class ProfileDetail(DetailView):
+    context_object_name = 'profile_detail'
+    model = models.UserProfile
+    template_name = 'accounts/profile_detail.html'

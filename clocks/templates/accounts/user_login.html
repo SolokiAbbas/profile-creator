@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load staticfiles %}
 {% block body_block %}
   <div class="jumbotron button-container">
     <form class="form-group" action="{% url 'accounts:user_login' %}" method="POST">
