@@ -17,3 +17,7 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.nav-inline{
+  flex-wrap: nowrap;
+}

@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^about', views.about, name='about'),
     url(r'^digital', views.digital, name='digital'),
     url(r'^analog', views.analog, name='analog'),
+    url(r'^logout/$', views.user_logout, name='logout'),
 
 ]

@@ -25,7 +25,12 @@
           </ul>
         </div>
         <div class="nav-container">
-          <ul class='nav navbar-nav'>
+          <ul class='nav-inline navbar-nav '>
+            {% if user.is_authenticated %}
+            <li><a class='navbar-brand' href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+            <li><a class='navbar-brand' href="{% url 'accounts:user_login' %}">Login</a></li>
+            {% endif %}
             <li><a class='navbar-brand' href="{% url 'accounts:register' %}">Register</a></li>
           </ul>
         </div>
