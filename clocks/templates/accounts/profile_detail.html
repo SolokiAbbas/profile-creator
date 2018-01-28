@@ -2,10 +2,9 @@
 {% load staticfiles %}
 {% block body_block %}
   <div class="jumbotron">
-    <h1>{{ username.title }}</h1>
-    <h1>{{ email }}</h1>
+    <h4>{{ user_form.as_p }}</h4>
+    <h4>{{ profile_form.as_p }}</h4>
     <img src="{ion-android-person}" alt="Profile">
-
   </div>
 
 {% endblock %}

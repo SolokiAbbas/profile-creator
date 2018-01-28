@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from accounts.forms import UserForm
-from . import models
+from accounts.forms import UserForm, ProfileForm
+from accounts.models import UserProfile
 from django.contrib.auth.models import User
+from django.db import transaction
 
 from django.contrib.auth import authenticate, login, logout
 from django.http import HttpResponseRedirect, HttpResponse
@@ -34,6 +35,9 @@ def register(request):
         if user_form.is_valid():
             user = user_form.save()
             user.set_password(user.password)
+            profile = user.userprofile
+            profile.bio = request.POST['bio']
+            profile.save()
             user.save()
             registered = True
             login(request, user)
@@ -42,16 +46,32 @@ def register(request):
     else:
         user_form = UserForm
     return render(request, 'accounts/register.html',
-                        {'user_form':user_form, 'registered': registered})
+                        {'user_form':user_form, 'registered': registered,})
 
 @login_required
-def current_user(request):
-    current = request.user
-    # profile = User.objects.get(username=current.username)
-    bio = models.UserProfile.objects.all().filter(user=current)
-    print(models.UserProfile.objects.all().filter(user=current))
-    return render(request,'accounts/profile_detail.html',{"username":current.username,
-                                                            "email":current.email,})
+@transaction.atomic
+def update_profile(request):
+    print(User.objects.all()[1].username)
+    print(UserProfile.objects.all()[1].bio)
+    print(UserProfile.objects.get(user_id=2).bio)
+    if request.method == 'POST':
+        user_form = UserForm(request.POST, instance=request.user)
+        profile_form = ProfileForm(request.POST, instance=request.user.userprofile)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+            messages.success(request, _('Your profile was successfully updated!'))
+            return redirect('accounts:profile_detail')
+        else:
+            messages.error(request, _('Please correct the error below.'))
+    else:
+        user_form = UserForm(instance=request.user)
+        profile_form = ProfileForm(instance=request.user.userprofile)
+    return render(request, 'accounts/profile_detail.html', {
+        'user_form': user_form,
+        'profile_form': profile_form
+    })
+
 
 def user_login(request):
 
@@ -71,5 +91,5 @@ def user_login(request):
 
 class ProfileDetail(DetailView):
     context_object_name = 'profile_detail'
-    model = models.UserProfile
+    model = UserProfile
     template_name = 'accounts/profile_detail.html'
