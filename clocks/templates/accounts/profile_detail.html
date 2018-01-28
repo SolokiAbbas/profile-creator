@@ -2,8 +2,24 @@
 {% load staticfiles %}
 {% block body_block %}
   <div class="jumbotron">
-    <h4>{{ user_form.as_p }}</h4>
-    <h4>{{ profile_form.as_p }}</h4>
+    <form class="" action="index.html" method="post">
+      {% csrf_token %}
+      <ul>
+          <h2>{{ user.username.title }}</h2>
+        <li>
+          <label for="">Email:</label>
+          <input type="text" name="email" value="{{ user_form.email }}">
+        </li>
+        <li>
+          <label for="">Password:</label>
+          <input type="password" name="password" value="">
+        </li>
+        <li>
+          {{ profile_form.as_p }}
+        </li>
+      </ul>
+      <input class="btn btn-primary" type="submit" name="submit" value="Make Changes">
+    </form>
     <img src="{ion-android-person}" alt="Profile">
   </div>
 
