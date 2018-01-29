@@ -2,25 +2,18 @@
 {% load staticfiles %}
 {% block body_block %}
   <div class="jumbotron">
-    <form class="" action="index.html" method="post">
-      {% csrf_token %}
-      <ul>
-          <h2>{{ user.username.title }}</h2>
-        <li>
-          <label for="">Email:</label>
-          <input type="text" name="email" value="{{ user_form.email }}">
-        </li>
-        <li>
-          <label for="">Password:</label>
-          <input type="password" name="password" value="">
-        </li>
-        <li>
-          {{ profile_form.as_p }}
-        </li>
-      </ul>
-      <input class="btn btn-primary" type="submit" name="submit" value="Make Changes">
-    </form>
-    <img src="{ion-android-person}" alt="Profile">
+    <div class="profile-container">
+      <img src="{% static 'profile_image.png' %}" width="250px" height="250px" alt="Profile">
+      <form class="form-container" method="post">
+        {% csrf_token %}
+        <h1 class="title">{{ user.username.title }}</h1>
+        {{ user_form.as_p }}
+        <label class="password">Password:</label>
+        <input type="password" name="password">
+        {{ profile_form.as_p }}
+        <input class="btn btn-primary" type="submit" name="submit" value="Make Changes">
+      </form>
+    </div>
   </div>
 
 {% endblock %}

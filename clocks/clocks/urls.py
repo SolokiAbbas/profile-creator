@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from accounts import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
@@ -25,5 +26,6 @@ urlpatterns = [
     url(r'^digital', views.digital, name='digital'),
     url(r'^analog', views.analog, name='analog'),
     url(r'^logout/$', views.user_logout, name='logout'),
-
 ]
+
+urlpatterns += staticfiles_urlpatterns()

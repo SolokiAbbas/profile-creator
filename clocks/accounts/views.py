@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from accounts.forms import UserForm, ProfileForm
+from accounts.forms import UserForm, ProfileForm, UserProfileForm
 from accounts.models import UserProfile
 from django.contrib.auth.models import User
 from django.db import transaction
@@ -51,21 +51,24 @@ def register(request):
 @login_required
 @transaction.atomic
 def update_profile(request):
-    print(User.objects.all()[1].username)
-    print(UserProfile.objects.all()[1].bio)
-    print(UserProfile.objects.get(user_id=2).bio)
     if request.method == 'POST':
-        user_form = UserForm(request.POST, instance=request.user)
+        passwordchange = False
+        user_form = UserProfileForm(request.POST, instance=request.user)
         profile_form = ProfileForm(request.POST, instance=request.user.userprofile)
         if user_form.is_valid() and profile_form.is_valid():
+            if request.POST['password']:
+                passwordchange = True
+                user_form = user_form.save()
+                user_form.set_password(request.POST['password'])
             user_form.save()
             profile_form.save()
-            messages.success(request, _('Your profile was successfully updated!'))
-            return redirect('accounts:profile_detail')
+            if passwordchange:
+                login(request, user_form)
+            return render(request, 'index.html')
         else:
-            messages.error(request, _('Please correct the error below.'))
+            print('Please correct the error below.')
     else:
-        user_form = UserForm(instance=request.user)
+        user_form = UserProfileForm(instance=request.user)
         profile_form = ProfileForm(instance=request.user.userprofile)
     return render(request, 'accounts/profile_detail.html', {
         'user_form': user_form,

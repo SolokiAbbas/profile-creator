@@ -13,3 +13,8 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ('bio',)
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('email',)
