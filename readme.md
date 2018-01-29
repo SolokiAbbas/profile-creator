@@ -1,8 +1,11 @@
 ## Clock Project
 
-Making a Project to make a clock using Django and bootstrap.
+Making a Project to make a clock using Python, Django, Bootstrap, and MongoDB.
 
 ### Design
+
+![Clocks](images/home_page.png)
+
 
 #### Navbar
 This app should have a navbar on the top of every page.
@@ -14,9 +17,14 @@ This app should have a digital clock on the center of the page.
 Button on the top should indicate either analog version of Clock
 Or the digital version of the clock.
 
----
-### New Features to add
-1. Make Simple clock
-2. User Log in and Log out
-3. Multiple Users
-4. Mutli-paged HTML
+![Register](images/registration.png)
+#### User Registration
+Users are able to register an account through MongoDB. Fields include
+Username, Email, Password, and Bio. After registration, users can log in
+and out.
+
+![Profile](images/profile.png)
+#### User Profile
+Users are able to click their profile and edit their email, password, or
+bio and save the changes. If the user does not want to change their password,
+they are not required and can still save the other changes.
