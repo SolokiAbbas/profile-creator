@@ -6,3 +6,4 @@
 
 # Ignore mongodb
 data
+*.pyc
