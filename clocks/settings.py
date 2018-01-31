@@ -77,7 +77,8 @@ WSGI_APPLICATION = 'clocks.wsgi.application'
 
 DATABASES = {
        'default': {
-
+           'ENGINE': 'djongo',
+           'NAME': 'mongo-db',
        }
    }
 
