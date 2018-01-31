@@ -75,12 +75,11 @@ WSGI_APPLICATION = 'clocks.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#        'default': {
-#            'ENGINE': 'djongo',
-#            'NAME': 'my-db',
-#        }
-#    }
+DATABASES = {
+       'default': {
+
+       }
+   }
 
 DATABASES['default'] = dj_mongo_database_url.config()
 
