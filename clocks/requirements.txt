@@ -1,3 +1,15 @@
--r requirements-dev.txt
-gunicorn
-psycopg2
+argon2-cffi==18.1.0
+bcrypt==3.1.4
+certifi==2017.11.5
+cffi==1.11.4
+dataclasses==0.4
+Django==2.0.1
+django-mongodb-engine==0.6.0
+djangotoolbox==1.8.0
+djongo==1.2.19
+Pillow==5.0.0
+pycparser==2.18
+pymongo==3.6.0
+pytz==2017.3
+six==1.11.0
+sqlparse==0.2.4
