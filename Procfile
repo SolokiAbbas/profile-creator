@@ -1,1 +1,1 @@
-web: gunicorn django-clock.wsgi --log-file -
+web: gunicorn --pythonpath="$PWD/clocks" clocks.wsgi:application --log-file - --log-level debug
