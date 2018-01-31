@@ -75,15 +75,12 @@ WSGI_APPLICATION = 'clocks.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-# DATABASES = {
-#        'default': {
-#            'ENGINE': 'djongo',
-#            'NAME': 'mongo-db',
-#        }
-#    }
-DATABASES = {'default': dj_database_url.config(default='mongodb://sammy:password1368@ds119688.mlab.com:19688/mongo-db')}
-
-# DATABASES['default'] = dj_mongo_database_url.parse('mongodb://sammy:password1368@ds119688.mlab.com:19688/mongo-db')
+DATABASES = {
+       'default': {
+           'ENGINE': 'djongo',
+           'NAME': 'mongo-db',
+       }
+   }
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
