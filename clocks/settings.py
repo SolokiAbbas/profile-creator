@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 from decouple import config
-import dj_mongo_database_url
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -75,14 +75,15 @@ WSGI_APPLICATION = 'clocks.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-       'default': {
-           'ENGINE': 'djongo',
-           'NAME': 'mongo-db',
-       }
-   }
+# DATABASES = {
+#        'default': {
+#            'ENGINE': 'djongo',
+#            'NAME': 'mongo-db',
+#        }
+#    }
+DATABASES = {'default': dj_database_url.config(default='mongodb://sammy:password1368@ds119688.mlab.com:19688/mongo-db')}
 
-DATABASES['default'] = dj_mongo_database_url.parse('mongodb://sammy:password1368@ds119688.mlab.com:19688/mongo-db')
+# DATABASES['default'] = dj_mongo_database_url.parse('mongodb://sammy:password1368@ds119688.mlab.com:19688/mongo-db')
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
