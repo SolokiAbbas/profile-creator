@@ -7,4 +7,4 @@
 # Ignore mongodb
 data
 *.pyc
-*.vEnv
+*.env

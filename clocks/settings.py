@@ -26,7 +26,7 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ['django-clock.herokuapp.com']
+ALLOWED_HOSTS = ['django-clock.herokuapp.com', 'localhost']
 
 
 # Application definition
