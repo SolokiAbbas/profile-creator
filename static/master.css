@@ -66,3 +66,9 @@ li.greetings.ion-android-person{
 .dance-image{
   margin-left: 40px;
 }
+
+.clock-container{
+	display: flex;
+	justify-content: center;
+	align-content: center;
+}

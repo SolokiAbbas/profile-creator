@@ -17,11 +17,9 @@ def index(request):
 def about(request):
     return render(request, 'about.html')
 
-def digital(request):
-    return render(request, 'digital.html')
-
-def analog(request):
-    return render(request, 'analog.html')
+@login_required
+def clocks(request):
+    return render(request, 'clocks.html')
 
 @login_required
 def user_logout(request):

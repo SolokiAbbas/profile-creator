@@ -37,9 +37,3 @@ div b:nth-child(4)
 {
 	font-weight: 400;
 }
-
-.clock-container{
-	display: flex;
-	justify-content: center;
-	align-content: center;
-}

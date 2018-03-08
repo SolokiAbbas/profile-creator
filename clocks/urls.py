@@ -23,8 +23,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts', include('accounts.urls')),
     url(r'^about', views.about, name='about'),
-    url(r'^digital', views.digital, name='digital'),
-    url(r'^analog', views.analog, name='analog'),
+    url(r'^clocks', views.clocks, name='clocks'),
     url(r'^logout/$', views.user_logout, name='logout'),
 ]
 
