@@ -2,29 +2,36 @@
 {% load staticfiles %}
 {% block body_block %}
   <div class="jumbotron button-container">
-    <img src="{% static 'intro.gif' %}" width="350px" height="400px" alt="intro"></img>
-    <div>
-      <h2>Welcome to Visual Academy!</h2>
-      <h4>Log in to access our fun visual site!</h4>
-      <form class="form-group" action="{% url 'accounts:user_login' %}" method="POST">
-        {% if errors %}
-        <h5 style="color:red">Invalid Username or Password</h5>
-        <br/>
-        {% endif %}
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input class="form-control" type="text" name="username" placeholder="Username" value="{{ username }}">
-        <br/>
-        <label for="password">Password:</label>
-        <input class="form-control" type="password" name="password">
-        <br/>
-        <input class="btn btn-primary" type="submit" value="Login">
-        <br/>
-        <br/>
-        <h5>Not a member?</h5>
-        <h6><a class='navbar-brand' href="{% url 'accounts:register' %}">Click here to Register</a></h6>
-      </form>
-    </div>
+    {% if user.is_authenticated %}
+      <div>
+        <h2 class="karma-font">Welcome to Visual Academy!</h2>
+        <h4 class="karma-font">Have fun browsing through the Visuals!</h4>
+      </div>
+    {% else %}
+      <img src="{% static 'intro.gif' %}" width="350px" height="400px" alt="intro"></img>
+      <div>
+        <h2 class="karma-font">Welcome to Visual Academy!</h2>
+        <h4 class="karma-font">Log in to access our fun visual site!</h4>
+        <form class="form-group" action="{% url 'accounts:user_login' %}" method="POST">
+          {% if errors %}
+          <h5 style="color:red">Invalid Username or Password</h5>
+          <br/>
+          {% endif %}
+          {% csrf_token %}
+          <label for="username">Username:</label>
+          <input class="form-control" type="text" name="username" placeholder="Username" value="{{ username }}">
+          <br/>
+          <label for="password">Password:</label>
+          <input class="form-control" type="password" name="password">
+          <br/>
+          <input class="btn btn-primary" type="submit" value="Login">
+          <br/>
+          <br/>
+          <h5 class="karma-font">Not a member?</h5>
+          <h6><a class='navbar-brand karma-font' href="{% url 'accounts:register' %}">Click here to Register</a></h6>
+        </form>
+      </div>
+    {% endif %}
   </div>
 
 {% endblock %}

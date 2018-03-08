@@ -9,6 +9,7 @@
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous">
     </script>
+    <link href="https://fonts.googleapis.com/css?family=Coiny|Karma" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -18,24 +19,24 @@
     <nav class='navbar navbar-expand-md navbar-dark bg-dark navbar-static-top'>
         <div class="container">
           <ul class='nav navbar-nav'>
-            <li><a class='navbar-brand mb-0 h1' href="{% url 'index' %}">Home</a></li>
-            <li><a class='navbar-brand' href="{% url 'about' %}">About</a></li>
-            <li><a class='navbar-brand' href="{% url 'digital' %}">Digital Clock</a></li>
-            <li><a class='navbar-brand' href="{% url 'analog' %}">Analog Clock</a></li>
+            <li><a class='navbar-brand mb-0 h1 karma-font' href="{% url 'index' %}">Home</a></li>
+            <li><a class='navbar-brand karma-font' href="{% url 'about' %}">About</a></li>
+            <li><a class='navbar-brand karma-font' href="{% url 'digital' %}">Digital Clock</a></li>
+            <li><a class='navbar-brand karma-font' href="{% url 'analog' %}">Analog Clock</a></li>
           </ul>
         </div>
         <div class="nav-container">
           <ul class='nav-inline navbar-nav '>
             {% if user.is_authenticated %}
 
-            <li class="greetings ion-android-person">Hello, {{ user.username.title }}</li>
+            <li class="greetings ion-android-person coiny-font">Hello, {{ user.username.title }}</li>
 
-            <li><a class='navbar-brand' href="{% url 'accounts:profile_detail' %}">Profile</a></li>
-            <li><a class='navbar-brand' href="{% url 'logout' %}">Logout</a></li>
+            <li><a class='navbar-brand karma-font' href="{% url 'accounts:profile_detail' %}">Profile</a></li>
+            <li><a class='navbar-brand karma-font' href="{% url 'logout' %}">Logout</a></li>
             {% else %}
-            <li><a class='navbar-brand' href="{% url 'accounts:user_login' %}">Login</a></li>
+            <li><a class='navbar-brand karma-font' href="{% url 'accounts:user_login' %}">Login</a></li>
             {% endif %}
-            <li><a class='navbar-brand' href="{% url 'accounts:register' %}">Register</a></li>
+            <li><a class='navbar-brand karma-font' href="{% url 'accounts:register' %}">Register</a></li>
           </ul>
         </div>
     </nav>
