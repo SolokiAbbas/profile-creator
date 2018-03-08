@@ -2,8 +2,27 @@
 {% load staticfiles %}
 {% block body_block %}
   <div class="jumbotron button-container">
-    <a class="btn btn-primary buttons" href="{% url 'digital' %}" role="button">Digital Clock</a>
-    <a class="btn btn-primary" href="{% url 'analog' %}" role="button">Analog Clock</a>
+    <h5>Welcome to Visual Academy!</h5>
+    <h5>Log In to access our fun visual site!</h5>
+    <form class="form-group" action="{% url 'accounts:user_login' %}" method="POST">
+      {% if errors %}
+      <h5 style="color:red">Invalid Username or Password</h5>
+      <br/>
+      {% endif %}
+      <h2>Login Here:</h2>
+      {% csrf_token %}
+      <label for="username">Username:</label>
+      <input class="form-control" type="text" name="username" placeholder="Username" value="{{ username }}">
+      <br/>
+      <label for="password">Password:</label>
+      <input class="form-control" type="password" name="password">
+      <br/>
+      <input class="btn btn-primary" type="submit" value="Login">
+      <br/>
+      <br/>
+      <h5>Not a member?</h5>
+      <h6><a class='navbar-brand' href="{% url 'accounts:register' %}">Click here to Register</a></h6>
+    </form>
   </div>
 
 {% endblock %}
