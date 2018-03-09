@@ -79,10 +79,8 @@ DATABASES = {
        'default': {
            'ENGINE': 'djongo',
            'NAME': 'mongo-db',
-            'HOST': 'ds119688.mongolab.com',
-            'PORT': 19688,
-            'USER': 'sammy',
-            'PASSWORD': 'password1',
+            'HOST': 'mongodb://sammy:password1@ds119688.mlab.com:19688/mongo-db',
+
        }
    }
 
