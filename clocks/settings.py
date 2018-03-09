@@ -81,6 +81,8 @@ DATABASES = {
            'NAME': 'mongo-db',
             'HOST': 'ds119688.mongolab.com',
             'PORT': 19688,
+            'USER': 'sammy',
+            'PASSWORD': 'password1',
        }
    }
 
