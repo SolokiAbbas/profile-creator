@@ -60,15 +60,17 @@ li.greetings.ion-android-person{
 .karma-font{
   font-family: "Karma";
 }
+
 .coiny-font{
   font-family: "Coiny";
 }
+
 .dance-image{
   margin-left: 40px;
 }
 
 .clock-container{
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-content: center;
 }
