@@ -79,3 +79,8 @@ li.greetings.ion-android-person{
 	justify-content: space-around;
 	align-content: center;
 }
+
+.top-clock{
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
