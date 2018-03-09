@@ -69,6 +69,11 @@ li.greetings.ion-android-person{
   margin-left: 40px;
 }
 
+.thanks-image{
+  display:flex;
+  justify-content: center;
+}
+
 .clock-container{
 	display: flex;
 	justify-content: space-around;
