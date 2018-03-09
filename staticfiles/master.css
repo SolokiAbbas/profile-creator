@@ -1,0 +1,76 @@
+.about-container{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.button-container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons{
+  margin-right: 5px;
+}
+
+.nav-container{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-inline{
+  flex-wrap: nowrap;
+}
+
+.profile-container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background-color: peachpuff;
+  padding: 4%;
+}
+
+.form-container{
+  width: 400px;
+}
+
+li.greetings.ion-android-person{
+  margin-left: -14%;
+  color: wheat;
+}
+
+.jumbotron{
+  padding: 8%;
+}
+
+.title{
+  padding-bottom: 6%;
+}
+
+.password{
+  padding-bottom: 15px;
+}
+
+.btn-primary {
+   color: #fff;
+   background-color: #ff8f00;
+   border-color: darkmagenta;
+}
+
+.karma-font{
+  font-family: "Karma";
+}
+
+.coiny-font{
+  font-family: "Coiny";
+}
+
+.dance-image{
+  margin-left: 40px;
+}
+
+.clock-container{
+	display: flex;
+	justify-content: space-around;
+	align-content: center;
+}
