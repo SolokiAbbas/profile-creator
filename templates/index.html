@@ -4,14 +4,14 @@
   <div class="jumbotron button-container">
     {% if user.is_authenticated %}
       <div>
-        <h2 class="karma-font">Welcome to Visual Academy!</h2>
-        <h4 class="karma-font">Have fun browsing through the Visuals!</h4>
+        <h2 class="karma-font">Welcome to the Game Center!</h2>
+        <h4 class="karma-font">Have fun browsing through the Visuals and play some Games!</h4>
         <img class="dance-image" src="{% static 'dance.gif' %}" width="350px" height="400px" alt="dance"></img>
       </div>
     {% else %}
       <img src="{% static 'intro.gif' %}" width="350px" height="400px" alt="intro"></img>
       <div>
-        <h2 class="karma-font">Welcome to Visual Academy!</h2>
+        <h2 class="karma-font">Welcome to the Game Center!</h2>
         <h4 class="karma-font">Log in to access our fun visual site!</h4>
         <form class="form-group" action="{% url 'accounts:user_login' %}" method="POST">
           {% if errors %}
