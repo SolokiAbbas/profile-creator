@@ -16,10 +16,13 @@
     <link rel="stylesheet" href="{% static 'master.css' %}">
   </head>
   <body>
-    <nav class='navbar navbar-expand-md navbar-dark bg-dark navbar-static-top'>
-        <div class="container">
+    <nav class='navbar navbar-expand-lg navbar-dark bg-dark navbar-static-top'>
+      <a class='navbar-brand mb-0 h1 karma-font' href="{% url 'index' %}">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class='nav navbar-nav'>
-            <li><a class='navbar-brand mb-0 h1 karma-font' href="{% url 'index' %}">Home</a></li>
             <li><a class='navbar-brand karma-font' href="{% url 'about' %}">About</a></li>
             {% if user.is_authenticated %}
             <li><a class='navbar-brand karma-font' href="{% url 'clocks' %}">Fun Clocks</a></li>
@@ -34,20 +37,20 @@
             </div>
             {% endif %}
           </ul>
-        </div>
-        <div class="nav-container">
-          <ul class='nav-inline navbar-nav '>
-            {% if user.is_authenticated %}
+          <div class="nav-container">
+            <ul class='nav-inline navbar-nav '>
+              {% if user.is_authenticated %}
 
-            <li class="greetings ion-android-person coiny-font">Hello, {{ user.username.title }}</li>
+              <li class="greetings ion-android-person coiny-font">Hello, {{ user.username.title }}</li>
 
-            <li><a class='navbar-brand karma-font' href="{% url 'accounts:profile_detail' %}">Profile</a></li>
-            <li><a class='navbar-brand karma-font' href="{% url 'logout' %}">Logout</a></li>
-            {% else %}
-            <li><a class='navbar-brand karma-font' href="{% url 'accounts:user_login' %}">Login</a></li>
-            {% endif %}
-            <li><a class='navbar-brand karma-font' href="{% url 'accounts:register' %}">Register</a></li>
-          </ul>
+              <li><a class='navbar-brand karma-font' href="{% url 'accounts:profile_detail' %}">Profile</a></li>
+              <li><a class='navbar-brand karma-font' href="{% url 'logout' %}">Logout</a></li>
+              {% else %}
+              <li><a class='navbar-brand karma-font' href="{% url 'accounts:user_login' %}">Login</a></li>
+              {% endif %}
+              <li><a class='navbar-brand karma-font' href="{% url 'accounts:register' %}">Register</a></li>
+            </ul>
+          </div>
         </div>
     </nav>
     <div class="container">
