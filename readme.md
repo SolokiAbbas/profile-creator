@@ -1,16 +1,21 @@
 ## Clock Project
 
-Making a Project to make a clock using Python, Django, Bootstrap, and MongoDB.
+A Project using Python, Django, Bootstrap, and MongoDB.
 
 ### Design
 
 ![Clocks](images/home_page.png)
 
+Log in or register using Django's built in form creation and log in.
+The views is based on MTV architecture and allows repeated use of templates.
+Once user is logged in, they can access visuals and games.
 
 #### Navbar
 This app should have a navbar on the top of every page.
 On the right should allow users to log in and out.
 Editable Profile for each user.
+User can see a dropdown of games and can choose which game to play or
+check out the clock visual.
 
 #### Clock Design
 This app should have a digital clock on the center of the page.
@@ -19,19 +24,20 @@ Or the digital version of the clock.
 
 ![Register](images/registration.png)
 #### User Registration
-Users are able to register an account through MongoDB. Fields include
-Username, Email, Password, and Bio. After registration, users can log in
-and out.
+Users are able to register an account. Data is stored MongoLabs which is
+MongoDB . Fields include Username, Email, Password, and Bio.
+After registration, users can log in and out.
 
 ![Profile](images/profile.png)
 #### User Profile
 Users are able to click their profile and edit their email, password, or
 bio and save the changes. If the user does not want to change their password,
-they are not required and can still save the other changes.
+they are not required to enter anything and can still save the other changes.
 
 #### Games
 Games will be made available in the future and is under construction!
 
+---
 
 #### Future Plans:
 1. Make games available for this project.
