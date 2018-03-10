@@ -93,6 +93,7 @@ div.greetings.ion-android-person{
 
 .dropdown-menu{
   font-size: 1.30rem;
+
 }
 
 .dropdown{
@@ -107,7 +108,6 @@ div.greetings.ion-android-person{
   background-color: darkgray;
   font-size: 1.80rem;
 }
-.nav-logs{
-  display: flex;
-  flex-direction: column;
+.button-drop{
+  padding-left: 0;
 }
