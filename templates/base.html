@@ -18,14 +18,16 @@
   <body>
     <nav class='navbar navbar-expand-lg navbar-dark bg-dark navbar-static-top'>
       <a class='navbar-brand mb-0 h1 karma-font' href="{% url 'index' %}">Home</a>
+      {% if user.is_authenticated %}
+        <div class="greetings ion-android-person coiny-font"> Hello, {{ user.username.title }}</div>
+      {% endif %}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class='nav navbar-nav'>
-            <li><a class='navbar-brand karma-font' href="{% url 'about' %}">About</a></li>
+            <a class='navbar-brand karma-font' href="{% url 'about' %}">About</a>
             {% if user.is_authenticated %}
-            <li><a class='navbar-brand karma-font' href="{% url 'clocks' %}">Fun Clocks</a></li>
+            <a class='navbar-brand karma-font' href="{% url 'clocks' %}">Fun Clocks</a>
             <div class="dropdown karma-font">
               <button class="btn btn-dark menu-size dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Games
               </button>
@@ -35,22 +37,12 @@
                 <a class="dropdown-item" href="#">Game 3</a>
               </div>
             </div>
+            <a class='navbar-brand karma-font' href="{% url 'accounts:profile_detail' %}">Profile</a>
+            <a class='navbar-brand karma-font' href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a class='navbar-brand karma-font' href="{% url 'accounts:user_login' %}">Login</a>
+            <a class='navbar-brand karma-font' href="{% url 'accounts:register' %}">Register</a>
             {% endif %}
-          </ul>
-          <div class="nav-container">
-            <ul class='nav-inline navbar-nav '>
-              {% if user.is_authenticated %}
-
-              <li class="greetings ion-android-person coiny-font">Hello, {{ user.username.title }}</li>
-
-              <li><a class='navbar-brand karma-font' href="{% url 'accounts:profile_detail' %}">Profile</a></li>
-              <li><a class='navbar-brand karma-font' href="{% url 'logout' %}">Logout</a></li>
-              {% else %}
-              <li><a class='navbar-brand karma-font' href="{% url 'accounts:user_login' %}">Login</a></li>
-              {% endif %}
-              <li><a class='navbar-brand karma-font' href="{% url 'accounts:register' %}">Register</a></li>
-            </ul>
-          </div>
         </div>
     </nav>
     <div class="container">
