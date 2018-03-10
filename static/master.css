@@ -85,3 +85,12 @@ li.greetings.ion-android-person{
   margin-bottom: 20px;
   margin-left: 20px;
 }
+.dropdown{
+  background-color: #343a40 !important;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu a:hover {
+  background-color: darkgray;
+}
