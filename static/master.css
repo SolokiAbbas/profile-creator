@@ -88,6 +88,9 @@ li.greetings.ion-android-person{
 .menu-size{
   font-size: 1.22rem;
 }
+.dropdown-menu{
+  font-size: 1.30rem;
+}
 .dropdown{
   background-color: #343a40 !important;
 }
@@ -96,4 +99,5 @@ li.greetings.ion-android-person{
 }
 .dropdown-menu a:hover {
   background-color: darkgray;
+  font-size: 1.80rem;
 }
