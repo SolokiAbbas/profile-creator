@@ -28,3 +28,11 @@ and out.
 Users are able to click their profile and edit their email, password, or
 bio and save the changes. If the user does not want to change their password,
 they are not required and can still save the other changes.
+
+#### Games
+Games will be made available in the future and is under construction!
+
+
+#### Future Plans:
+1. Make games available for this project.
+2. About 3 custom games.
