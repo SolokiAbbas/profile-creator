@@ -37,11 +37,15 @@
                 <a class="dropdown-item" href="#">Game 3</a>
               </div>
             </div>
-            <a class='navbar-brand karma-font' href="{% url 'accounts:profile_detail' %}">Profile</a>
-            <a class='navbar-brand karma-font' href="{% url 'logout' %}">Logout</a>
+            <div class="nav-logs">
+              <a class='navbar-brand karma-font' href="{% url 'accounts:profile_detail' %}">Profile</a>
+              <a class='navbar-brand karma-font' href="{% url 'logout' %}">Logout</a>
+            </div>
             {% else %}
-            <a class='navbar-brand karma-font' href="{% url 'accounts:user_login' %}">Login</a>
-            <a class='navbar-brand karma-font' href="{% url 'accounts:register' %}">Register</a>
+            <div class="nav-logs">
+              <a class='navbar-brand karma-font' href="{% url 'accounts:user_login' %}">Login</a>
+              <a class='navbar-brand karma-font' href="{% url 'accounts:register' %}">Register</a>
+            </div>
             {% endif %}
         </div>
     </nav>
