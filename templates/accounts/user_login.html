@@ -2,21 +2,22 @@
 {% load staticfiles %}
 {% block body_block %}
   <div class="jumbotron button-container">
-    <form class="form-group" action="{% url 'accounts:user_login' %}" method="POST">
-      {% if errors %}
-      <h5 style="color:red">Invalid Username or Password</h5>
-      <br/>
-      {% endif %}
-      <h2>Login Here:</h2>
-      {% csrf_token %}
-      <label for="username">Username:</label>
-      <input class="form-control" type="text" name="username" placeholder="Username" value="{{ username }}">
-      <br/>
-      <label for="password">Password:</label>
-      <input class="form-control" type="password" name="password">
-      <br/>
-      <input class="btn btn-primary" type="submit" value="Login">
-    </form>
+      <form class="form-group" action="{% url 'accounts:user_login' %}" method="POST">
+        {% if errors %}
+        <h5 style="color:red">Invalid Username or Password</h5>
+        <br/>
+        {% endif %}
+        <h2>Login Here:</h2>
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input class="form-control" type="text" name="username" placeholder="Username" value="{{ username }}">
+        <br/>
+        <label for="password">Password:</label>
+        <input class="form-control" type="password" name="password">
+        <br/>
+        <input class="btn btn-primary" type="submit" value="Login">
+      </form>
+      <img src="{% static 'login.gif' %}" width="350px" height="400px" alt="login"></img>
   </div>
 
 {% endblock %}
