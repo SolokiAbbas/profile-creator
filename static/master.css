@@ -118,5 +118,5 @@ div.greetings.ion-android-person{
   flex-wrap: wrap;
 }
 .login2{
-  margin-top: 65px;
+  margin-top: -65px;
 }
