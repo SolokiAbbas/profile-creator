@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block body_block %}
-  <div class="jumbotron button-container">
+  <div class="jumbotron login2-container">
       <form class="form-group" action="{% url 'accounts:user_login' %}" method="POST">
         {% if errors %}
         <h5 style="color:red">Invalid Username or Password</h5>

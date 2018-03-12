@@ -117,6 +117,12 @@ div.greetings.ion-android-person{
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.login2-container{
+  display:flex;
+  justify-content: space-around;
+}
+
 .login2{
   margin-top: -65px;
 }
