@@ -92,7 +92,7 @@ div.greetings.ion-android-person{
 
 .dropdown-menu{
   font-size: 1.30rem;
-
+  margin-top: -10px;
 }
 
 .dropdown{
