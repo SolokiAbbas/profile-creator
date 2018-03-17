@@ -22,6 +22,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^admin/', admin.site.urls),
     url(r'^accounts', include('accounts.urls')),
+    url(r'^games/', include('games.urls')),
     url(r'^about', views.about, name='about'),
     url(r'^clocks', views.clocks, name='clocks'),
     url(r'^logout/$', views.user_logout, name='logout')
