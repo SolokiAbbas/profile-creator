@@ -14,6 +14,9 @@ from django.views.generic import View, DetailView
 def index(request):
     return render(request, 'index.html')
 
+def forced(request):
+    return render(request, 'forced.html')
+
 def about(request):
     return render(request, 'about.html')
 
