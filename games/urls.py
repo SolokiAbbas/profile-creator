@@ -7,7 +7,7 @@ app_name = 'games'
 urlpatterns = [
     url(r'^forced/$', views.forced, name='forced'),
     url(r'^collision/$', views.collision, name='collision'),
-    url(r'^fireball/$', views.fireball, name='fireball')
+    url(r'^particle/$', views.particle, name='particle')
 ]
 
 urlpatterns += staticfiles_urlpatterns()
