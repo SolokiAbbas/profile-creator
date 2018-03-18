@@ -6,7 +6,7 @@ app_name = 'games'
 
 urlpatterns = [
     url(r'^forced/$', views.forced, name='forced'),
-    url(r'^collision/$', views.collision, name='collision'),
+    url(r'^wave/$', views.wave, name='wave'),
     url(r'^particle/$', views.particle, name='particle')
 ]
 

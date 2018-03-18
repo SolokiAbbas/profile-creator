@@ -4,8 +4,8 @@ from django.shortcuts import render
 def forced(request):
     return render(request, 'games/forced.html')
 
-def collision(request):
-    return render(request, 'games/collision.html')
+def wave(request):
+    return render(request, 'games/wave.html')
 
 def particle(request):
     return render(request, 'games/particle.html')
