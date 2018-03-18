@@ -6,3 +6,6 @@ def forced(request):
 
 def collision(request):
     return render(request, 'games/collision.html')
+
+def fireball(request):
+    return render(request, 'games/firewall.html')
