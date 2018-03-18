@@ -25,15 +25,13 @@ var svg = d3.select("svg"),
     width = +svg.attr("width"),
     height = +svg.attr("height");
 
-//TODO make svg responsive
+
 d3.select("div#chartId")
     .append("div")
-    .classed("svg-container", true) //container class to make  responsive svg
+    .classed("svg-container", true)
     .append("svg")
-    //responsive SVG needs these 2 attributes and no width and height attr
     .attr("preserveAspectRatio", "xMinYMin meet")
     .attr("viewBox", "0 0 600 400")
-    //class to make it responsive
     .classed("svg-content-responsive", true);
 
 
