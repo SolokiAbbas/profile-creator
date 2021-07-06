@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
 {% block body_block %}
+<div>
+  <img class="banner-image" src="{% static 'sky-shine.jpg' %}" alt="banner"></img>
+</div>
   <div class="jumbotron button-container">
     {% if user.is_authenticated %}
       <div class="intro-login">

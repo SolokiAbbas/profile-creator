@@ -25,6 +25,7 @@ STATIC_DIR = os.path.join(BASE_DIR,"static")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
+MONGODB_HOST = config('DB_HOST')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = ['profile-creator.herokuapp.com', 'localhost']
@@ -79,10 +80,9 @@ WSGI_APPLICATION = 'clocks.wsgi.application'
 
 DATABASES = {
        'default': {
-           'ENGINE': 'djongo',
-           'NAME': 'mongo-db',
-            'HOST': 'mongodb://sammy:password1@ds119688.mlab.com:19688/mongo-db',
-
+            'ENGINE': 'djongo',
+            'NAME': 'mongo-db',
+            'HOST': MONGODB_HOST
        }
    }
 
